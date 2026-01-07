@@ -35,7 +35,8 @@ function App() {
       if (!coords.length) return alert("Please draw a farm boundary first!");
       setLoading(true);
       try {
-        const res = await fetch("https://crop-analyzer-mvp.onrender.com/analyze-farm", {
+        const API_URL = import.meta.env.VITE_API_URL;
+        const res = await fetch(`${API_URL}/analyze-farm`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ coordinates: coords, crop_type: cropType }),
