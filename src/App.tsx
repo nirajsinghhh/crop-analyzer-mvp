@@ -35,7 +35,7 @@ function App() {
       if (!coords.length) return alert("Please draw a farm boundary first!");
       setLoading(true);
       try {
-        const res = await fetch("http://127.0.0.1:5000/analyze-farm", {
+        const res = await fetch("https://crop-analyzer-mvp-backend.vercel.app/analyze-farm", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ coordinates: coords, crop_type: cropType }),
