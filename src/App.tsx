@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, FeatureGroup } from "react-leaflet";
 import { EditControl } from "react-leaflet-draw";
 import "leaflet/dist/leaflet.css";
 import "leaflet-draw/dist/leaflet.draw.css";
-import L, { featureGroup } from "leaflet";
+import L from "leaflet";
 
 let DefaultIcon = L.icon({
   iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
@@ -19,12 +19,6 @@ function App() {
   const [healthyRange, setHealthyRange] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [cropType, setCropType] = useState<string>("wheat");
-
-  const handleCreated = (e: any) => {
-    const layer = e.layer;
-    const polygon = layer.getLatLngs()[0].map((pt: any) => [pt.lng, pt.lat]);
-    setCoords([polygon]);
-  };
 
   const clearPolygons = () => {
     const layerGroup = featureGroupRef.current;
