@@ -71,7 +71,7 @@ function App() {
 
   return (
     <div style={{ padding: "1rem" }}>
-      <h1>Gujarat AgriTech – Crop Health Analyzer</h1>
+      <h1>AgriVision by {Byte Buster} - Crop Health Analyzer</h1>
 
       <div style={{ marginBottom: "10px" }}>
         <label style={{ fontWeight: "bold", marginRight: "10px" }}>
